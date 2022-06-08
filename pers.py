@@ -49,3 +49,25 @@ def persistence(n):
             total *= numsep6[i]
     count+=1
     return count
+
+
+
+
+# import operator
+# def persistence(n):
+#    i = 0
+#    while n>=10:
+#        n=reduce(operator.mul,[int(x) for x in str(n)],1)
+#        i+=1
+#    return i
+
+def persistence(n):
+    n = str(n)
+    count = 0
+    while len(n) > 1:
+        p = 1
+        for i in n:
+            p *= int(i)
+        n = str(p)
+        count += 1
+    return count
